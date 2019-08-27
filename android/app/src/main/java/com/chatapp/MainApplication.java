@@ -1,6 +1,6 @@
 package com.chatapp;
 
-// import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 
 import android.app.Application;
 import android.util.Log;
@@ -30,7 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
       // Packages that cannot be autolinked yet can be added manually here, for example:
       // packages.add(new MyReactNativePackage());
 
-      // new AsyncStoragePackage()
+      new AsyncStoragePackage();
 
       return packages;
     }

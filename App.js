@@ -8,6 +8,8 @@
 
 import React, {Fragment, Component} from 'react';
 import { WebView } from 'react-native-webview';
+import AsyncStorage from '@react-native-community/async-storage';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -25,9 +27,57 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App = () => {
+setValue = async () => {
+  const USER_1 = {
+    name: 'Tom',
+    age: 20,
+    traits: {
+      hair: 'black',
+      eyes: 'blue'
+    }
+  }
+    
+  try {
+    await AsyncStorage.setItem('aaa', JSON.stringify(USER_1))
+  } catch(e) {
+    console.log(e)
+    // save error
+  }
+
+}
+
+getMyValue = async () => {
+  try {
+    const value = await AsyncStorage.getItem('aaa')
+    console.log('Done', JSON.parse(value))
+  } catch(e) {
+    console.log(e)
+    // read error
+  }
+
+
+}
+
+getAllKeys = async () => {
+  let keys = []
+  try {
+    keys = await AsyncStorage.getAllKeys()
+  } catch(e) {
+    // read key error
+  }
+
+  console.log(keys)
+  // example console.log result:
+  // ['@MyApp_user', '@MyApp_key']
+}
+
+
+const App = () => {  
+  setValue();
+  getAllKeys();
+  getMyValue();
   return (
-    <WebView source={{ uri: 'http://192.168.43.151:3000' }} />
+    <WebView source={{ uri: 'https://chatwebapp09.herokuapp.com/' }} />
     // <Fragment>
     //   <StatusBar barStyle="dark-content" />
     //   <SafeAreaView>
