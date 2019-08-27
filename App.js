@@ -77,56 +77,67 @@ const App = () => {
   getAllKeys();
   getMyValue();
   return (
-    <WebView source={{ uri: 'https://chatwebapp09.herokuapp.com/' }} />
-    // <Fragment>
-    //   <StatusBar barStyle="dark-content" />
-    //   <SafeAreaView>
-    //     <ScrollView
-    //       contentInsetAdjustmentBehavior="automatic"
-    //       style={styles.scrollView}>
-    //       <Header />
-    //       {global.HermesInternal == null ? null : (
-    //         <View style={styles.engine}>
-    //           <Text style={styles.footer}>Engine: Hermes</Text>
-    //         </View>
-    //       )}
-    //       <View style={styles.body}>
-    //         <View style={styles.sectionContainer}>
-    //           <Text style={styles.sectionTitle}>Step One</Text>
-    //           <Text style={styles.sectionDescription}>
-    //             Edit <Text style={styles.highlight}>App.js</Text> to change this
-    //             screen and then come back to see your edits.
-    //           </Text>
-    //         </View>
-    //         <View style={styles.sectionContainer}>
-    //           <Text style={styles.sectionTitle}>See Your Changes</Text>
-    //           <Text style={styles.sectionDescription}>
-    //             <ReloadInstructions />
-    //           </Text>
-    //         </View>
-    //         <View style={styles.sectionContainer}>
-    //           <Text style={styles.sectionTitle}>Debug</Text>
-    //           <Text style={styles.sectionDescription}>
-    //             <DebugInstructions />
-    //           </Text>
-    //         </View>
-    //         <View style={styles.sectionContainer}>
-    //           <Text style={styles.sectionTitle}>Learn More</Text>
-    //           <Text style={styles.sectionDescription}>
-    //             Read the docs to discover what to do next:
-    //           </Text>
-    //         </View>
-    //         <LearnMoreLinks />
-    //       </View>
-    //     </ScrollView>
-    //   </SafeAreaView>
-    // </Fragment>
+    // <WebView source={{ uri: 'https://chatwebapp09.herokuapp.com/' }} />
+    <Fragment>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+        <View
+          style={{
+            flexDirection: 'row',
+            height: '10%',
+            padding: 20,
+          }}>
+          <View style={{backgroundColor: 'blue', flex: 0.3}} />
+          <View style={{backgroundColor: 'red', flex: 0.5}} />
+          <Text>Hello World!</Text>
+        </View>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}>
+          {/* <Header />
+          {global.HermesInternal == null ? null : (
+            <View style={styles.engine}>
+              <Text style={styles.footer}>Engine: Hermes</Text>
+            </View>
+          )} */}
+          <View style={styles.body}>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionDescription}>
+                Edit <Text style={styles.highlight}>App.js</Text> to change this
+                screen and then come back to see your edits.
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>See Your Changes</Text>
+              <Text style={styles.sectionDescription}>
+                <ReloadInstructions />
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Debug</Text>
+              <Text style={styles.sectionDescription}>
+                <DebugInstructions />
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Learn More</Text>
+              <Text style={styles.sectionDescription}>
+                Read the docs to discover what to do next:
+              </Text>
+            </View>
+            <LearnMoreLinks />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </Fragment>
   );
 };
 
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
+    height: '90%'
   },
   engine: {
     position: 'absolute',
